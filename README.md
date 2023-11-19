@@ -1,6 +1,12 @@
 # ap2
  trab ap2
 
+ requisitos python3:
+
+ python3 -m pip install tensorflow
+ python3 -m install opencv-python  
+ python3 -m install numpy
+
 é necessário alterar os locais conforme sua máquina
 ex de variaveis a alterar 
     ap.py: train_directory
