@@ -20,3 +20,7 @@ python3 ap.py
 python3 predict.py
 
 python3 reorder.py basicamente monta o diretorio de treino da maneira que ap.py consegue entender
+
+
+código baseado
+https://www.kaggle.com/code/susandaneshmand/cats-vs-dogs-classification-accuracy-99/notebook#Split-Train-,-Test-,-Validation
