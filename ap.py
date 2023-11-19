@@ -44,3 +44,6 @@ train_generator = train_datagen.flow_from_directory(
 )
 
 history = model.fit(train_generator, epochs=10)
+
+# Save the entire model to a file
+model.save('my_model.h5')
