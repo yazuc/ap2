@@ -1,6 +1,6 @@
 import tensorflow as tf
-from tensorflow.keras import layers, models
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow import layers, models
+from tensorflow import ImageDataGenerator
 
 # Model definition (unchanged)
 
@@ -30,7 +30,7 @@ train_datagen = ImageDataGenerator(rescale=1./255,
                                    fill_mode='nearest')
 
 # Adjust the path to your dataset
-train_directory = 'C:/Users/Leonardo/Downloads/ap2/train'
+train_directory = './train'
 print(f"Checking the content of directory: {train_directory}")
 import os
 print(os.listdir(train_directory))
