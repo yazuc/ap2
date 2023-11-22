@@ -1,6 +1,6 @@
 import tensorflow as tf
-from tensorflow import layers, models
-from tensorflow import ImageDataGenerator
+from keras import layers, models
+from keras.preprocessing.image import ImageDataGenerator
 
 # Model definition (unchanged)
 
@@ -46,4 +46,4 @@ train_generator = train_datagen.flow_from_directory(
 history = model.fit(train_generator, epochs=10)
 
 # Save the entire model to a file
-model.save('my_model.h5')
+model.save('my_model_10.h6')
