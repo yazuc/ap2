@@ -1,25 +1,48 @@
 import numpy as np
-from tensorflow.keras.preprocessing import image
-from tensorflow.keras.models import load_model
+from keras.preprocessing import image
+from keras.models import load_model
+import pandas as pd
+import os
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # Load the trained model
-model = load_model('my_model.h5')  # Replace with the path to your saved model
+model_10 = load_model('D:/Faculdade/cic/Fundamentos de ES/Primeiro Projeto/2/ap2/my_model_10.h6')
+model_20 = load_model('D:/Faculdade/cic/Fundamentos de ES/Primeiro Projeto/2/ap2/my_model_20.h6')
 
 # Load and preprocess the image you want to predict
-img_path = 'C:/Users/Leonardo/Downloads/ap2/stella.jpg'
-img = image.load_img(img_path, target_size=(150, 150))
-img_array = image.img_to_array(img)
-img_array = np.expand_dims(img_array, axis=0)
-img_array /= 255.0  # Normalize the pixel values to be between 0 and 1
+img_path_cat = './test/cat'
+img_path_dog = './test/dog'
 
-# Make predictions
-predictions = model.predict(img_array)
+# List Test Images
+cat_images = pd.DataFrame(os.listdir(img_path_cat), columns=['Files'])
+cat_images['TargetValue'] = 'cat'
+dog_images = pd.DataFrame(os.listdir(img_path_dog), columns=['Files'])
+dog_images['TargetValue'] = 'dog'
+images = pd.concat([cat_images, dog_images], ignore_index=True)
+images['Prediction_10'] = ""
+images['Prediction_20'] = ""
 
-# The model.predict() function returns the probability of the image belonging to class 1 (dog).
-# You can interpret the result based on your binary classification task.
+# Predict Images for each Model
+for index, row in images.iterrows():
+    print(index)
+    img = image.load_img(os.path.join('./test', images.iloc[index]["TargetValue"], images.iloc[index]["Files"]), target_size=(150, 150))
+    img_array = image.img_to_array(img)
+    img_array = np.expand_dims(img_array, axis=0)
+    img_array /= 255.0  # Normalize the pixel values to be between 0 and 1
 
-if predictions[0][0] > 0.5:
-    print("It's a dog!")
-else:
-    print("It's a cat!")
+    # Make predictions
+    prediction_10 = model_10.predict(img_array)
+    prediction_20 = model_20.predict(img_array)
 
+    if prediction_10 > 0.5:
+        images.at[index,'Prediction_10'] = "dog"
+    else:
+        images.at[index,'Prediction_10'] = "cat"
+
+    if prediction_20 > 0.5:
+        images.at[index,'Prediction_20'] = "dog"
+    else:
+        images.at[index,'Prediction_20'] = "cat"
+
+images.to_excel('forecastings.xlsx', index=False)
