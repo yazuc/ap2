@@ -10,6 +10,7 @@ Nomes: Leonardo T. Rubert, Bruno Battesini
  python3 -m install opencv-python  
  python3 -m install numpy
  python3 -m pip install openpyxl
+ python3 -m pip install pandas
 
 permitir long path para o tensorflow:
 
