@@ -3,6 +3,12 @@
 
 Nomes: Leonardo T. Rubert, Bruno Battesini
 
+permitir long path para o tensorflow:
+
+-executar no powershell com adm
+    New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
+    -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+
  requisitos python3:
 
  python3 -m pip install tensorflow
@@ -13,12 +19,6 @@ Nomes: Leonardo T. Rubert, Bruno Battesini
  python3 -m pip install pandas
  python3 -m pip install Pillow
  python3 -m pip install scipy   
-
-permitir long path para o tensorflow:
-
--executar no powershell com adm
-    New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
-    -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
 
 
 é necessário alterar os locais conforme sua máquina
@@ -42,3 +42,10 @@ caso dê algum problema com os modelos, é necessário rodar ap.py novamente
 
 código baseado
 https://www.kaggle.com/code/susandaneshmand/cats-vs-dogs-classification-accuracy-99/notebook#Split-Train-,-Test-,-Validation
+
+
+sobre os modelos:
+
+salvamos diversos modelos, a principio o modelo rodando a 10 epochs e outro rodando a 20 epochs, tem duas versões de cada modelo pois achavamos que o jeito de salvar eles era na
+extensão .h5, depois por um erro salvamos em .h6 e tivemos uns casos de erro ao usar esses modelos em outras máquinas, depois de uma pesquisa começamos a usar .keras que é utilizado
+na própria documentação do keras, encontrado nesse link: https://keras.io/guides/serialization_and_saving/#savedmodel-format
