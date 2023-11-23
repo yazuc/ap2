@@ -30,13 +30,13 @@ ex de variaveis a alterar
 
 compilação dos arquivos com python3
 
-python3 ap.py
+python3 ap.py - para gerar os modelos
 
-python3 predict.py
+python3 predict.py - para prever baseado nas imagens de teste
 
-python3 reorder.py basicamente monta o diretorio de treino da maneira que ap.py consegue entender
+python3 reorder.py - basicamente monta o diretorio de treino da maneira que ap.py consegue entender
 
-python3 datasetDivider.py separa os datasets em treino e teste
+python3 datasetDivider.py - separa os datasets em treino e teste
 
 caso dê algum problema com os modelos, é necessário rodar ap.py novamente
 
