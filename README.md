@@ -10,6 +10,16 @@ Nomes: Leonardo T. Rubert, Bruno Battesini
  python3 -m install opencv-python  
  python3 -m install numpy
  python3 -m pip install openpyxl
+ python3 -m pip install pandas
+ python3 -m pip install Pillow
+ python3 -m pip install scipy   
+
+permitir long path para o tensorflow:
+
+-executar no powershell com adm
+    New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
+    -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+
 
 é necessário alterar os locais conforme sua máquina
 ex de variaveis a alterar 
@@ -20,13 +30,15 @@ ex de variaveis a alterar
 
 compilação dos arquivos com python3
 
-python3 ap.py
+python3 ap.py - para gerar os modelos
 
-python3 predict.py
+python3 predict.py - para prever baseado nas imagens de teste
 
-python3 reorder.py basicamente monta o diretorio de treino da maneira que ap.py consegue entender
+python3 reorder.py - basicamente monta o diretorio de treino da maneira que ap.py consegue entender
 
-python3 datasetDivider.py separa os datasets em treino e teste
+python3 datasetDivider.py - separa os datasets em treino e teste
+
+caso dê algum problema com os modelos, é necessário rodar ap.py novamente
 
 código baseado
 https://www.kaggle.com/code/susandaneshmand/cats-vs-dogs-classification-accuracy-99/notebook#Split-Train-,-Test-,-Validation
