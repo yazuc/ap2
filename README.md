@@ -6,6 +6,7 @@ Nomes: Leonardo T. Rubert, Bruno Battesini
  requisitos python3:
 
  python3 -m pip install tensorflow
+ python3 -m pip install keras
  python3 -m install opencv-python  
  python3 -m install numpy
  python3 -m pip install openpyxl
