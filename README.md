@@ -28,5 +28,7 @@ python3 reorder.py basicamente monta o diretorio de treino da maneira que ap.py 
 
 python3 datasetDivider.py separa os datasets em treino e teste
 
+caso dê algum problema com os modelos, é necessário rodar ap.py novamente
+
 código baseado
 https://www.kaggle.com/code/susandaneshmand/cats-vs-dogs-classification-accuracy-99/notebook#Split-Train-,-Test-,-Validation
