@@ -11,6 +11,8 @@ Nomes: Leonardo T. Rubert, Bruno Battesini
  python3 -m install numpy
  python3 -m pip install openpyxl
  python3 -m pip install pandas
+ python3 -m pip install Pillow
+ python3 -m pip install scipy   
 
 permitir long path para o tensorflow:
 
