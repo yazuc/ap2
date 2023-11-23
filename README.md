@@ -10,6 +10,16 @@ Nomes: Leonardo T. Rubert, Bruno Battesini
  python3 -m install opencv-python  
  python3 -m install numpy
  python3 -m pip install openpyxl
+ python3 -m pip install pandas
+ python3 -m pip install Pillow
+ python3 -m pip install scipy   
+
+permitir long path para o tensorflow:
+
+-executar no powershell com adm
+    New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
+    -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+
 
 é necessário alterar os locais conforme sua máquina
 ex de variaveis a alterar 
