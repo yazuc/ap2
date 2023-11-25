@@ -43,7 +43,7 @@ train_generator = train_datagen.flow_from_directory(
     class_mode='binary'
 )
 
-history = model.fit(train_generator, epochs=10)
+history = model.fit(train_generator, epochs=20)
 
 # Save the entire model to a file
-model.save('my_model_10.h6')
+model.save('my_model_20.keras')
