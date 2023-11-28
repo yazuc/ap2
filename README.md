@@ -18,7 +18,8 @@ permitir long path para o tensorflow:
  python3 -m pip install openpyxl
  python3 -m pip install pandas
  python3 -m pip install Pillow
- python3 -m pip install scipy   
+ python3 -m pip install scipy  
+ python3 -m pip install matplotlib    
 
 
 é necessário alterar os locais conforme sua máquina
