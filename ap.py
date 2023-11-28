@@ -1,6 +1,7 @@
 import tensorflow as tf
 from keras import layers, models
 from keras.preprocessing.image import ImageDataGenerator
+import matplotlib.pyplot as plt
 
 # Model definition (unchanged)
 
@@ -44,6 +45,20 @@ train_generator = train_datagen.flow_from_directory(
 )
 
 history = model.fit(train_generator, epochs=20)
+accuracy = history.history['accuracy']
 
 # Save the entire model to a file
-model.save('my_model_20.keras')
+model.save('my_model_20.h5')
+
+
+# Save accuracy history to a file
+with open('accuracy_history_20.txt', 'w') as file:
+    for acc in accuracy:
+        file.write(str(acc) + '\n')
+
+# Plot and save the accuracy curve
+plt.plot(history.history['accuracy'])
+plt.title('Model Accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.savefig('accuracy_curve_20.png')
