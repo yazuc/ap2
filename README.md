@@ -35,8 +35,6 @@ python3 ap.py - para gerar os modelos
 
 python3 predict.py - para prever baseado nas imagens de teste
 
-python3 predict_unit.py (path da imagem Ex.: C:\Users\Leonardo\Downloads\ap2\miguel_2.jpeg) - para mostrar a imagem e sua predição
-
 python3 reorder.py - basicamente monta o diretorio de treino da maneira que ap.py consegue entender
 
 python3 datasetDivider.py - separa os datasets em treino e teste
